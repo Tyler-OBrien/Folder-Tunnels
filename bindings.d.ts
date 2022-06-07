@@ -1,0 +1,3 @@
+interface Bindings {
+  WEBSOCKET: DurableObjectNamespace;
+}

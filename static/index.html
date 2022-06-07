@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Folder Tunnel - Live stream a folder to the web!</title>
+  <meta name="description" content="Live stream a folder to the web">
+  <link rel="stylesheet" href="/index.css" />
+  <meta name="author" content="Tyler O'Brien" />
+</head>
+
+<body>
+  <div class="card-container">
+    <h1>Folder Tunnels</h1>
+    <h3>Select a directory to stream:</h3> <br />
+    <input id="picker" type="file" webkitdirectory mozdirectory />
+    <div>
+      <br />
+      <a href="" target="_blank" id="viewWebsiteLink">View Website</a>
+      <a href="https://r2.chaika.me/sample.zip" target="_blank" id="downloadLink" download>Download Sample</a>
+      <br />
+      <br />
+      <h4>Connection Status:</h4>
+      <label id="websocketLabel"></label>
+      <br />
+      <br />
+      <label id="fileWarning"></label>
+      <h3>Found Files:</h4>
+      <ul id="listing"></ul>
+    </div>
+  </div>
+  <script src="/index.js"></script>
+</body>
+
+</html>

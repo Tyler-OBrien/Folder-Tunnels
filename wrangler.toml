@@ -1,0 +1,26 @@
+name = "folder-tunnels"
+main = "dist/index.mjs"
+
+account_id = ""
+workers_dev = true
+# route = ""
+
+compatibility_date = "2022-06-06"
+compatibility_flags = []
+
+[durable_objects]
+bindings = [
+  { name = "WEBSOCKET", class_name = "Websocket" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["Websocket"]
+
+[build]
+command = "node build.js"
+
+[miniflare]
+kv_persist = true
+cache_persist = true
+durable_objects_persist = true
