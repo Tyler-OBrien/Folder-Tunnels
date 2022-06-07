@@ -16,7 +16,7 @@ export async function handleRequest(request: Request, env: Bindings) {
   const match = /\/(?<name>[^/]+)(?<action>.*)/.exec(url.pathname);
   if (!match?.groups) {
     // Give a random tunnel/socket uuid if not specified
-    
+
     return Response.redirect(`${url.origin}/${crypto.randomUUID()}`, 302);
   }
 

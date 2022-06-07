@@ -66,7 +66,6 @@ export class Websocket implements DurableObject {
     }
   }
 
-
   // This requests for the file from the client
   // It sends the request over Websocket, and then waits for a response from the client, by waiting for the promise to be resolved. There is also a timeout of 5000ms.
   async tryGetAsset(request: Request, truePath: string) {

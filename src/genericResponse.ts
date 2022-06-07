@@ -1,6 +1,10 @@
-export function genericResponse(text: string, status: number, headers: {} = {}) {
-    // Build a HTML response containing the text
-    const html = `
+export function genericResponse(
+  text: string,
+  status: number,
+  headers: {} = {}
+) {
+  // Build a HTML response containing the text
+  const html = `
       <!DOCTYPE html>
       <html>
       <head>
@@ -11,12 +15,12 @@ export function genericResponse(text: string, status: number, headers: {} = {}) 
       </body>
       </html>
     `;
-  
-    return new Response(html, {
-      status: status,
-      headers: {
-        "Content-Type": "text/html; charset=UTF-8",
-      },
-      ...headers
-    });
-  }
+
+  return new Response(html, {
+    status: status,
+    headers: {
+      "Content-Type": "text/html; charset=UTF-8",
+    },
+    ...headers,
+  });
+}

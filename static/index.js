@@ -155,9 +155,7 @@ function handle_request_stats(path) {
 }
 
 function flash_element(element) {
-  if (
-    element.classList.contains("flashAnimation") == false
-  ) {
+  if (element.classList.contains("flashAnimation") == false) {
     element.classList.add("flashAnimation");
     setTimeout(() => {
       element.classList.remove("flashAnimation");
