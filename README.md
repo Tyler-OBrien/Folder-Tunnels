@@ -6,7 +6,10 @@ JavaScript is required for the creator of the live stream, but not for any reque
 
 Example Video:
 
-https://r2-sharex.chaika.dev/file/2022/05/folder-tunnels-example.mp4
+
+https://user-images.githubusercontent.com/94197210/172295510-083bdc16-9c74-4656-8e5a-1e6b9ecabdcb.mp4
+
+
 
 Simple Overview:
 
@@ -30,3 +33,9 @@ The host responds with the file data over the Websocket, back to the Cloudflare 
 }
 ```
 When the Cloudflare Worker recieves this data, it finds the promise from the map and resolves it with the incoming request. Then, that waiting request is returned the returned data, or if the status code is 404, then not found, or custom code 1002 returning no files have been shared yet.
+
+Supports reconnecting, when the websocket connection is first established, a session secret is generated in the Durable Object and transferred to the client as a cookie. Automamatic Reconnection on failure is done by the client, and as long as they possess that session secret, they will be allowed to reconnect without needing to generate a new tunnel.
+
+
+
+
