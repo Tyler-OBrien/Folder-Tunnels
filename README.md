@@ -3,6 +3,8 @@ This is designed to expose ("live stream") a directory over Cloudflare Workers u
 
 JavaScript is required for the creator of the live stream, but not for any requesting clients, as the Cloudflare Worker handles the websocket connection and requesting the file.
 
+Note: Editing the served file and having it serve the new version on the next request only works on Firefox. On Chrome or Chromium based browsers, it just errors out.
+
 
 Example Video:
 
