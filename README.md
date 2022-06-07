@@ -33,3 +33,9 @@ The host responds with the file data over the Websocket, back to the Cloudflare 
 }
 ```
 When the Cloudflare Worker recieves this data, it finds the promise from the map and resolves it with the incoming request. Then, that waiting request is returned the returned data, or if the status code is 404, then not found, or custom code 1002 returning no files have been shared yet.
+
+Supports reconnecting, when the websocket connection is first established, a session secret is generated in the Durable Object and transferred to the client as a cookie. Automamatic Reconnection on failure is done by the client, and as long as they possess that session secret, they will be allowed to reconnect without needing to generate a new tunnel.
+
+
+
+
