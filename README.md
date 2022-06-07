@@ -3,6 +3,11 @@ This is designed to expose ("live stream") a directory over Cloudflare Workers u
 
 JavaScript is required for the creator of the live stream, but not for any requesting clients, as the Cloudflare Worker handles the websocket connection and requesting the file.
 
+
+Example Video:
+
+https://r2-sharex.chaika.dev/file/2022/05/folder-tunnels-example.mp4
+
 Simple Overview:
 
 On the request of a file (folder-tunnels.chaika.me/3112d91e-1e3c-4f9c-9bb9-deb7f227c8c5/index.html), the Cloudflare Worker will first find the Durable Object by ID (3112d91e-1e3c-4f9c-9bb9-deb7f227c8c5) and then send a request over the Websocket for the file (/index.html).
