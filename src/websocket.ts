@@ -154,7 +154,10 @@ export class Websocket implements DurableObject {
     this.session = websocket;
     websocket.addEventListener("message", async (message) => {
       var reply = JSON.parse(message.data) as ClientFileResponse;
-      this.pendingReplies.get(reply.ID)!(reply);
+      if (this.pendingReplies.has(reply.ID)) {
+        this.pendingReplies.get(reply.ID)(reply);
+        this.pendingReplies.delete(reply.ID);
+      }
     });
 
     websocket.addEventListener("close", async (evt) => {
